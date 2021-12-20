@@ -13,13 +13,14 @@ public class BaseResponse<T> {
 	private BaseResponseCode code;
 	private String message;
 	private T data;
-	
+
+	//성공
 	public BaseResponse(T data) {
 		this.code = BaseResponseCode.SUCCESS;
 		this.data = data;
 	}
 
-
+	//예외
 	public BaseResponse(BaseResponseCode code, String message) {
 		this.code = code;
 		this.message = message;

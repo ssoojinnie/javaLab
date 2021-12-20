@@ -19,7 +19,7 @@ public class BaseControllerAdvice {
 
     @ExceptionHandler(value={BaseException.class})
     @ResponseStatus(HttpStatus.OK)
-    @ResponseBody
+    @ResponseBody //예외를 핸들링 + responsebody로 객체를 리턴할 수도 있음.
     private BaseResponse<?> handleBaseException(BaseException e, WebRequest request){
         return new BaseResponse<String>(e.getResponseCode(), messageSource.getMessage(e.getResponseCode().name(), e.getArgs(), null));
     }
